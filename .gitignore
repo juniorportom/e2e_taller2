@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+protractor/tour-of-heroes-cli/dist
+protractor/tour-of-heroes-cli/tmp
+protractor/tour-of-heroes-cli/out-tsc
+
+# dependencies
+protractor/tour-of-heroes-cli/node_modules
+
+# IDEs and editors
+protractor/tour-of-heroes-cli/.idea
+protractor/tour-of-heroes-cli/.project
+protractor/tour-of-heroes-cli/.classpath
+protractor/tour-of-heroes-cli/.c9/
+protractor/tour-of-heroes-cli/*.launch
+protractor/tour-of-heroes-cli/.settings/
+protractor/tour-of-heroes-cli/*.sublime-workspace
+
+# IDE - VSCode
+protractor/tour-of-heroes-cli/.vscode/*
+protractor/tour-of-heroes-cli/!.vscode/settings.json
+protractor/tour-of-heroes-cli/!.vscode/tasks.json
+protractor/tour-of-heroes-cli/!.vscode/launch.json
+protractor/tour-of-heroes-cli/!.vscode/extensions.json
+
+# misc
+protractor/tour-of-heroes-cli/.sass-cache
+protractor/tour-of-heroes-cli/connect.lock
+protractor/tour-of-heroes-cli/coverage
+protractor/tour-of-heroes-cli/libpeerconnection.log
+protractor/tour-of-heroes-cli/npm-debug.log
+protractor/tour-of-heroes-cli/testem.log
+protractor/tour-of-heroes-cli/typings
+
+# e2e
+protractor/tour-of-heroes-cli/e2e/*.js
+protractor/tour-of-heroes-cli/e2e/*.map
+
+# System Files
+protractor/tour-of-heroes-cli/.DS_Store
+protractor/tour-of-heroes-cli/Thumbs.db
