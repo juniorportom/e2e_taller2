@@ -1,0 +1,16 @@
+describe('Los estudiantes login', function() {
+    it('Visits los estudiantes and fails at login', function() {
+        cy.visit('https://losestudiantes.co')
+        cy.contains('Cerrar').click()
+        cy.contains('Ingresar').click()
+        cy.get('.cajaLogIn').find('input[name="correo"]').click().type("prueba@example.com")
+        cy.get('.cajaLogIn').find('input[name="password"]').click().type("12345678")
+        cy.get('.cajaLogIn').click().contains('Ingresar').click()
+        cy.contains('Los Estudiantes')
+        cy.get('.Select-input').find('input[role="combobox"]').type("Mario Linares", { force: true })
+        cy.contains('Mario Linares Vasquez')
+        cy.get('#cuenta').click()
+        cy.contains('Salir').click()
+        cy.contains('Ingresar')
+    })
+})
