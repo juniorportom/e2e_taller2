@@ -1,4 +1,5 @@
 import {browser, by, element, ElementFinder} from 'protractor';
+import { SystemJsNgModuleLoader } from '@angular/core';
 
 export class TourOfHeroesPage {
   navigateTo() {
@@ -22,9 +23,21 @@ export class TourOfHeroesPage {
     element(by.buttonText('Add')).click();
   }
 
-  findHero(hero: string){
+  findHero(hero: string) {
     element(by.id('search-box')).sendKeys(hero);
     return element(by.css('.search-result')).getText();
   }
-  
+
+  deleteHero(hero_delete: string) {
+    const listHeros = this.getAllHeroes();
+
+    listHeros.each(function(hero){
+       hero.all(by.tagName('span')).get(1).getText().then(function(data){
+        if (data === hero_delete) {
+          hero.all(by.css('.delete')).click();
+          browser.driver.sleep(1000);
+        }
+      });
+    });
+  }
 }

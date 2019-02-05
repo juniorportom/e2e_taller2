@@ -46,7 +46,24 @@ describe('Buscar Heroe', () => {
     expect(page.getTop4Heroes()).toEqual(['Mr. Nice', 'Narco', 'Bombasto', 'Celeritas']);
   });
 
-  it('Buscar Bombasto', () => {    
+  it('Buscar Bombasto', () => {
     expect(page.findHero('Bombasto')).toEqual('Bombasto');
   });
+});
+
+
+describe('Tour of heroes, elimiar heroe', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateToHeroes();
+  });
+
+  it('borrar heroe', () => {
+    const currentHeroes = page.getAllHeroes().count();
+    page.deleteHero('Magma');
+    expect(page.getAllHeroes().count()).toBe(currentHeroes.then(n => n - 1));
+  });
+
 });
