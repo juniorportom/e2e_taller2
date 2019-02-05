@@ -51,7 +51,6 @@ describe('Buscar Heroe', () => {
   });
 });
 
-
 describe('Tour of heroes, elimiar heroe', () => {
   let page: TourOfHeroesPage;
 
@@ -65,5 +64,20 @@ describe('Tour of heroes, elimiar heroe', () => {
     page.deleteHero('Magma');
     expect(page.getAllHeroes().count()).toBe(currentHeroes.then(n => n - 1));
   });
+});
 
+
+describe('Tour of heroes, editar heroe', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateToHeroes();
+  });
+
+  it('editar heroe', () => {
+    page.editHero('Dynama', 'Reinaldo');
+    page.navigateToDashboard();
+    expect(page.findHero('Reinaldo')).toEqual('Reinaldo');
+  });
 });
