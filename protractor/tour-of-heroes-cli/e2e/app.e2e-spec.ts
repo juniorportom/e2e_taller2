@@ -33,3 +33,20 @@ describe('Tour of heroes, heroes page', () => {
   });
 
 });
+
+describe('Buscar Heroe', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage();
+  });
+
+  it('Ir al dashboard', () => {
+    page.navigateTo();
+    expect(page.getTop4Heroes()).toEqual(['Mr. Nice', 'Narco', 'Bombasto', 'Celeritas']);
+  });
+
+  it('Buscar Bombasto', () => {    
+    expect(page.findHero('Bombasto')).toEqual('Bombasto');
+  });
+});
