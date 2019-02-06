@@ -64,4 +64,12 @@ export class TourOfHeroesPage {
     browser.driver.sleep(1000);
   }
 
+  goToHeroFromDashboard(position) {
+    element.all(by.css('.col-1-4')).get(position - 1).click();
+  }
+
+  getHeroDetailText() {
+    return element(by.tagName('h2')).getText();
+  }
+
 }

@@ -81,3 +81,18 @@ describe('Tour of heroes, editar heroe', () => {
     expect(page.findHero('Reinaldo')).toEqual('Reinaldo');
   });
 });
+
+describe('Tour of heroes, Navegar heroe desde dashboard', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateTo();
+  });
+
+  it('Navegar heroe desde dashboard', () => {
+    page.goToHeroFromDashboard(2);
+    // page.navigateToDashboard();
+    expect(page.getHeroDetailText()).toEqual('Narco details!');
+  });
+});
