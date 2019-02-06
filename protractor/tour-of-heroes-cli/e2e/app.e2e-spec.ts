@@ -92,7 +92,21 @@ describe('Tour of heroes, Navegar heroe desde dashboard', () => {
 
   it('Navegar heroe desde dashboard', () => {
     page.goToHeroFromDashboard(2);
-    // page.navigateToDashboard();
     expect(page.getHeroDetailText()).toEqual('Narco details!');
+  });
+});
+
+
+describe('Tour of heroes, Navegar heroe desde la lista de heroes', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateToHeroes();
+  });
+
+  it('Navegar heroe desde la lista de heroes', () => {
+    page.goToHeroFromList('Celeritas');
+    expect(page.getHeroDetailText()).toEqual('Celeritas details!');
   });
 });

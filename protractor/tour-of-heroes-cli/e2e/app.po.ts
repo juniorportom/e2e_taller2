@@ -72,4 +72,17 @@ export class TourOfHeroesPage {
     return element(by.tagName('h2')).getText();
   }
 
+  goToHeroFromList(hero_name: string) {
+    const listHeros = this.getAllHeroes();
+
+    listHeros.each(function(hero){
+       hero.all(by.tagName('span')).get(1).getText().then(function(data){
+        if (data === hero_name) {
+          hero.all(by.tagName('span')).get(1).click();
+        }
+      });
+    });
+    element(by.buttonText('View Details')).click();
+  }
+
 }
