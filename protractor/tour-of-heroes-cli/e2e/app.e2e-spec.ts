@@ -110,3 +110,18 @@ describe('Tour of heroes, Navegar heroe desde la lista de heroes', () => {
     expect(page.getHeroDetailText()).toEqual('Celeritas details!');
   });
 });
+
+describe('Tour of heroes, Navegar heroe desde la busqueda', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateTo();
+  });
+
+  it('Navegar heroe desde la busqueda', () => {
+    page.goToHeroFromFind('Celeritas');
+    expect(page.getHeroDetailText()).toEqual('Celeritas details!');
+  });
+});
+

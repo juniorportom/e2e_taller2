@@ -85,4 +85,9 @@ export class TourOfHeroesPage {
     element(by.buttonText('View Details')).click();
   }
 
+  goToHeroFromFind(hero: string) {
+    element(by.id('search-box')).sendKeys(hero);
+    element(by.css('.search-result')).click();
+  }
+
 }
